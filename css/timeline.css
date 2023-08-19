@@ -1,0 +1,131 @@
+
+
+@media screen and (min-width: 800px) {
+
+  .timeline-root {
+    position: relative;
+    display: inline flex;
+    flex-direction: row;
+  }
+
+  .timeline-root > * {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    position: relative;
+    width: 12rem;
+    height: 16rem;
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+    margin: 3rem;
+  }
+
+  .timeline-root > * > img {
+    width: 100%;
+    max-height: 9rem;
+    object-fit: contain;
+  }
+
+  .timeline-root::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: black;
+  
+    left: 0;
+    top: calc(50% - 0.7rem/2);
+    width: 100%;
+    height: 0.7rem;
+  }
+
+  /* Stagger */
+  .timeline-root > *:nth-child(even) {
+    margin-top: 28rem;
+  }
+
+  /* Tick marks */
+  .timeline-root > *::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: black;
+  
+    left: 50%;
+    top: calc(-2rem - 2.5rem);
+    width: 0.35rem;
+    height: 2rem;
+  }
+
+  .timeline-root > *:nth-child(odd)::after {
+    top: initial;
+    bottom: -4.5rem;
+  }
+  
+}
+
+
+/* Mobile Only */
+@media screen and (max-width: 799px) {
+  .timeline-root {
+    position: relative;
+    display: flex;
+    width: 30rem;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem 0 2rem;
+  }
+  
+  .timeline-root > * {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    position: relative;
+    width: 12rem;
+    height: 9rem;
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .timeline-root > *::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: black;
+  
+    top: 50%;
+    right: -3rem;
+    height: 0.35rem;
+    width: 2rem;
+  }
+  
+  .timeline-root > * > img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .timeline-root::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: black;
+  
+    top: 0;
+    left: calc(50% - 0.7rem/2);
+    height: calc(100% + 4rem);
+    width: 0.7rem;
+  }
+  
+  .timeline-root > *:nth-child(odd) {
+    margin-left: calc(100% - 12rem);
+  }
+  
+  .timeline-root > *:nth-child(odd)::after {
+    left: -3rem;
+  }
+}
