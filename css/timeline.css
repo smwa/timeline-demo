@@ -121,8 +121,11 @@
     width: 0.7rem;
   }
   
-  .timeline-root > *:nth-child(odd) {
-    margin-left: calc(100% - 12rem);
+  /* When there is room to spread out */
+  @media screen and (min-width: 30rem) {
+    .timeline-root > *:nth-child(odd) {
+      margin-left: calc(100% - 12rem);
+    }
   }
   
   .timeline-root > *:nth-child(odd)::after {
